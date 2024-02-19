@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'gotham';
+    src: url('./assets/Font/GothamMedium.ttf') format('ttf'),
+        url('./assets/Font/GothamBookItalic.ttf') format('ttf');
+    /* Add other font properties here if needed */
+}
+
+body {
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+
+    font-family: 'gotham';
+}
+
+header {
+    width: 25%;
+    height: 100vh;
+    background-color: black;
+    color: yellow;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li > a{
+    text-decoration: none;
+    color: yellow;
+}
+
+main {
+    padding: 1.5em;
+}
