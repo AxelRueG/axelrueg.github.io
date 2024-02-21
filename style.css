@@ -35,11 +35,11 @@ header {
     /* position: sticky; */
 }
 
-ul {
+nav > ul {
     list-style-type: none;
 }
 
-li > a{
+nav > ul > li > a{
     text-decoration: none;
     color: yellow;
 }
@@ -60,4 +60,14 @@ li > a{
 
 .card {
     border: 1px solid red;
+}
+
+/* skills */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 10px;    /* Adjusts the gap between grid items */
+    padding: 10px;/* Optional: Adds some padding around the grid */
 }
