@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <title>About Me</title>
 </head>
 <body>
@@ -79,19 +80,19 @@
         <section id="services" class="section">
             <!-- Main content of the services section -->
             <h2>My Services</h2>
-            <div class="card">
+            <div class="">
                 <h3>WEB APPLICATION DEVELOPMENT</h3>
                 <p>I specialize in developing custom web applications. From dynamic websites to complex web platforms.</p>
             </div>
-            <div class="card">
+            <div class="">
                 <h3>BACKEND DEVELOPMENT</h3>
                 <p>Whether it's building RESTful APIs or handling database interactions, I excel in backend development using PHP and Node.js. I ensure scalable and secure solutions tailored to your business needs.</p>
             </div>
-            <div class="card">
+            <div class="">
                 <h3>ANDROID APPLICATION DEVELOPMENT</h3>
                 <p>Transform your ideas into mobile apps with my expertise in Android app development. I can create intuitive and user-friendly Android applications that meet your specifications and requirements.</p>
             </div>
-            <div class="card">
+            <div class="">
                 <h3>ANALYSIS OF DATA</h3>
                 <p>Need help organizing and analyzing your data? I offer expertise in Python for data processing and management, ensuring your data is structured, accessible, and actionable.</br>
                 Machine Learning Integration, utilize the power of machine learning to enhance your products and services. I can develop machine learning models and integrate them into your web applications for intelligent decision-making.</p>
@@ -213,16 +214,12 @@
                 <div class="card">
                     <h3>Rock, Paper and Scissors</h3>
                     <p>a game made in javascript vanilla, based on one of the challenges of the <a href="https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH">frontent mentor</a> page</p>
-                    <a href="https://axelrueg.github.io/FrontendMentor-RPS/">
-                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*yHZKuUPofUf39CpZ6frmxw.png" alt="rock, paper and scissors">
-                    </a>
+                    <a href="https://axelrueg.github.io/FrontendMentor-RPS/">.</a>
                 </div>
                 <div class="card">
                     <h3>Mines Game</h3>
                     <p>a game made with React, to deepen the knowledge of this framework.<br>In this we can see the classic Windows game "mines".</p>
-                    <a href="https://axelrueg.github.io/mines/home">
-                        <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple18/v4/00/ce/e7/00cee795-d6ac-0da4-51ab-befa733b15b4/pr_source.png/512x512bb.jpg" alt="mines">
-                    </a>
+                    <a href="https://axelrueg.github.io/mines/home">.</a>
                 </div>
                 <div class="card">
                     <h3>Codepen solves</h3>
@@ -234,7 +231,51 @@ You can see the solutions along with their codes by clicking <a href="https://co
 
         <section id="contact" class="section">
             <!-- Main content of the contact section -->
-            
+
+            <h3>Contact me</h3>
+            <div class="">
+                <div>
+                    <div class="contact">
+                        <h4><i class="fa-regular fa-map"></i> Location</h4>
+                        <p>Santa Fe, Argentina (cod 3000)</p>
+                    </div>
+                    <div class="contact">
+                        <h4><i class="fa-regular fa-envelope"></i> Email</h4>
+                        <p>axelcuer@gmail.com</p>
+                    </div>
+                    <div class="contact">
+                        <h4><i class="fa-solid fa-phone"></i> Phone</h4>
+                        <p>(+54) 342-5930060</p>
+                    </div>
+                    <div class="contact">
+                        <h4>Social Media</h4>
+                        <a href="www.linkedin.com/in/axel-rueda-gimenez-b46970222">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/axelrueg/">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="">
+                    <form action="enviar_correo.php" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br><br>
+                        
+                        <label for="subject">subject:</label>
+                        <input type="text" id="subject" name="subject" required><br><br>
+                        
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                        
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
