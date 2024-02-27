@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./style.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="./style.css">
     <title>About Me</title>
 </head>
 <body>
     
-    <header>
+    <header class="header">
         <!-- Logo, navigation menu, search bar, etc. -->
-        <nav>
-            <ul>
+        <nav class="navbar">
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -23,184 +25,188 @@
     </header>
 
     <main>
-        <section id="home" class="section">
-            <!-- Main content of the home section -->
-            <p>Hello, my name is:</p>
-            <h1>Rueda Gimenez, Axel</h1>
-            <h2>Cake</h2>
-            <p>I'm software development.</p>
+        <section id="home" class="section home">
+            <div class="container">
+                <img src="./assets/IMG_20211005_104242_1~2.jpg" alt="profile" class="home__profile">                
+            </div>
+            <div class="home__info">
+                <p>Hello, <span class="highlight">my name is</span></p>
+                <h1 class="highlight">AXEL RUEDA GIMENEZ</h1>
+                <p>I'm <span class="home--italic">software development.</span></p>
+    
+                <p>
+                    I'm from Argentina, currently living in Santa Fe city. <br>
+                    I'm studying my last year of computer engineering at the National University of the Litoral (UNL).
+                </p>
 
-            <p>
-                I'm from Argentina, currently living in Santa Fe city. <br>
-                I'm studying my last year of computer engineering at the National University of the Litoral (UNL).
-            </p>
+                <div class="home__contacts">
+                    <p><a href="https://github.com/AxelRueG" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://www.linkedin.com/in/axel-rueda-gimenez-b46970222/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </p>
+                    <a href="./assets/rueda gimenez, axel.pdf" target="_blank">
+                        <button class="home__btn">download CV</button>
+                    </a>
+                </div>
 
-            <img src="./assets/IMG_20211005_104242_1~2.jpg" alt="profile" width="250">
-
-            <a href="https://github.com/AxelRueG" target="_blank">github</a>
-            <a href="https://www.linkedin.com/in/axel-rueda-gimenez-b46970222/" target="_blank">linkedin</a>
-
-            <a href="./assets/rueda gimenez, axel.pdf" target="_blank">
-                <button>download CV</button>
-            </a>
+            </div>
         </section>
 
         <section id="about" class="section">
-            <h2>About me</h2>
+            <h2>ABOUT ME</h2>
 
-            <!-- Main content of the about section -->
-            <div class="card">
-                <p>
-                    Current i'm a student of computer engeneering of the National University of the Litoral, finished a 80% of the studing plan. 
-                </p>
-                <img src="assets/unl.png" alt="UNL-logo" width="200">
-            </div>
-
-            <div class="card">
-                <h3>WORK EXPERIENCE</h3>
-                <p>
-                    During July 2022 and December 2023, I worked as a Junior backend development in the government retirement and pension agency of the province of Santa Fe. <br>
-                    In this role I had the task of updating, maintaining and adding functionalities to the systems along with managing the database of the organizations associated with the entity.
-                </p>
-                <img src="assets/caja-logo.png" alt="caja-logo">
-            </div>
-            
-            <div class="card">
-                <h3>INTEREST & HOBBIES</h3>
-                <p>
-                    I like to go running around the city to exercise and to clear my head.
-                    Watch movies and series, also read novels, of any genre, I don't have a preference.
-                    I like music, I listen to all kinds depending on the time, but rock is what I listen to the most. I try to play the guitar (learning slowly :p)
-                    habeses I think I'm "Bob the builder" and I try to fix things around the house.
-                </p>
+            <div class="wrapper">
+                <div class="container">
+                    <p>
+                        Current i'm a student of computer engeneering of the National University of the Litoral, finished a 80% of the studing plan. 
+                    </p>
+                    <img src="assets/unl.png" alt="UNL-logo" width="200">
+                </div>
+    
+                <div class="container">
+                    <h3>WORK EXPERIENCE</h3>
+                    <p>
+                        During July 2022 and December 2023, I worked as a Junior backend development in the government retirement and pension agency of the province of Santa Fe. <br>
+                        In this role I had the task of updating, maintaining and adding functionalities to the systems along with managing the database of the organizations associated with the entity.
+                    </p>
+                    <img src="assets/caja-logo.png" alt="caja-logo">
+                </div>
+                
+                <div class="container">
+                    <h3>INTEREST & HOBBIES</h3>
+                    <p>
+                        I like to go running around the city to exercise and to clear my head.
+                        Watch movies and series, also read novels, of any genre, I don't have a preference.
+                        I like music, I listen to all kinds depending on the time, but rock is what I listen to the most. I try to play the guitar (learning slowly :p)
+                        habeses I think I'm "Bob the builder" and I try to fix things around the house.
+                    </p>
+                </div>
             </div>
 
         </section>
 
         <section id="services" class="section">
-            <!-- Main content of the services section -->
-            <h2>My Services</h2>
-            <div class="">
-                <h3>WEB APPLICATION DEVELOPMENT</h3>
-                <p>I specialize in developing custom web applications. From dynamic websites to complex web platforms.</p>
+            <h2>MY SERVICES</h2>
+            <div class="wrapper">
+                <div class="card">
+                    <h3>WEB APPLICATION DEVELOPMENT</h3>
+                    <p>I specialize in developing custom web applications. From dynamic websites to complex web platforms.</p>
+                </div>
+                <div class="card">
+                    <h3>BACKEND DEVELOPMENT</h3>
+                    <p>Whether it's building RESTful APIs or handling database interactions, I excel in backend development using PHP and Node.js. I ensure scalable and secure solutions tailored to your business needs.</p>
+                </div>
+                <div class="card">
+                    <h3>ANDROID APPLICATION DEVELOPMENT</h3>
+                    <p>Transform your ideas into mobile apps with my expertise in Android app development. I can create intuitive and user-friendly Android applications that meet your specifications and requirements.</p>
+                </div>
+                <div class="card">
+                    <h3>ANALYSIS OF DATA</h3>
+                    <p>Need help organizing and analyzing your data? I offer expertise in Python for data processing and management, ensuring your data is structured, accessible, and actionable.</br>
+                        Machine Learning Integration, utilize the power of machine learning to enhance your products and services. I can develop machine learning models and integrate them into your web applications for intelligent decision-making.</p>
+                </div>
             </div>
-            <div class="">
-                <h3>BACKEND DEVELOPMENT</h3>
-                <p>Whether it's building RESTful APIs or handling database interactions, I excel in backend development using PHP and Node.js. I ensure scalable and secure solutions tailored to your business needs.</p>
-            </div>
-            <div class="">
-                <h3>ANDROID APPLICATION DEVELOPMENT</h3>
-                <p>Transform your ideas into mobile apps with my expertise in Android app development. I can create intuitive and user-friendly Android applications that meet your specifications and requirements.</p>
-            </div>
-            <div class="">
-                <h3>ANALYSIS OF DATA</h3>
-                <p>Need help organizing and analyzing your data? I offer expertise in Python for data processing and management, ensuring your data is structured, accessible, and actionable.</br>
-                Machine Learning Integration, utilize the power of machine learning to enhance your products and services. I can develop machine learning models and integrate them into your web applications for intelligent decision-making.</p>
-            </div>
-            
+                    
         </section>
 
         <section id="skills" class="section">
-            <!-- Main content of the contact section -->
             <h3>PROFESSIONAL SKILLS</h3>
 
-            <div class="skills">
+            <div class="wrapper">
 
                 <div class="card">
-                    <h3>JavaScrip</h3>
+                    <h3 class="highlight"><i class="fa-brands fa-js"></i> JavaScrip</h3>
                     <p>
                         development of end-to-end web applications with javascript based on frameworks (such as react) or vanilla for the frontend, along with its backend using node.js
                     </p>
                     <p>
                         knowledge:
                         <ul>
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>Express</li>
-                            <li>JQuery</li>
+                            <li><i class="fa-brands fa-react"></i> React</li>
+                            <li><i class="fa-brands fa-node-js"></i> Node.js</li>
+                            <li><i class="fa-brands fa-node-js"></i> Express</li>
+                            <li><i class="fa-brands fa-js"></i> JQuery</li>
                         </ul>
                     </p>
                 </div>
                 
                 <div class="card">
-                    <h3>PHP</h3>
+                    <h3 class="highlight"><i class="fa-brands fa-php"></i> PHP</h3>
                     <p>
                         development and maintenance of web applications using the MVC model or RESTful API through PHP in its different versions.
                     </p>
                     <p>
                         knowledge:
                         <ul>
-                            <li>Symfony</li>
-                            <li>Laravel</li>
+                            <li><i class="fa-brands fa-symfony"></i> Symfony</li>
+                            <li><i class="fa-brands fa-laravel"></i> Laravel</li>
                         </ul>
                     </p>
                 </div>
     
                 <div class="card">
-                    <h3>Python</h3>
+                    <h3 class="highlight"><i class="fa-brands fa-python"></i> Python</h3>
                     <p>Used widely in the area of data analysis and also in web development, along with its numerous libraries, it is one of the programming languages in which I have worked and enjoyed the most.</p>
                     <p>
                         knowledge:
                         <ul>
-                            <li>Numpy & Matplotlib</li>
-                            <li>Pandas</li>
-                            <li>scikit-learn</li>
-                            <li>Django</li>
+                            <li><i class="fa-brands fa-python"></i> Numpy & Matplotlib</li>
+                            <li><i class="fa-brands fa-python"></i> Pandas</li>
+                            <li><i class="fa-brands fa-python"></i> scikit-learn</li>
+                            <li><i class="fa-brands fa-python"></i> Django</li>
                         </ul>
                     </p>
                 </div>
                 
                 <div class="card">
-                    <h3>Java & Kotlin</h3>
+                    <h3 class="highlight"><i class="fa-brands fa-java"></i> Java & Kotlin</h3>
                     <p>Being used in the native Android application development environment, I know both languages and their most used libraries.</p>
                     <p>
                         knowledge:
                         <ul>
-                            <li>Android apps development</li>
-                            <li>Spring boot (essentials)</li>
+                            <li><i class="fa-brands fa-android"></i> Android apps development</li>
+                            <li><i class="fa-brands fa-java"></i> Spring boot (essentials)</li>
                         </ul>
                     </p>
                 </div>
                 
                 <div class="card">
-                    <h3>SQL</h3>
+                    <h3 class="highlight"><i class="fa-solid fa-database"></i> SQL</h3>
                     <p>
                         Design and administration of relational databases, along with the implementation of stored procedures and triggers to guarantee speed and security.
                     </p>
                     <p>
                         knowledge:
                         <ul>
-                            <li>Postgrest</li>
-                            <li>Oracle</li>
-                            <li>SQL Server</li>
-                            <li>PL/SQL</li>
+                            <li><i class="fa-solid fa-database"></i> Postgrest</li>
+                            <li><i class="fa-solid fa-database"></i> Oracle</li>
+                            <li><i class="fa-solid fa-database"></i> SQL Server</li>
+                            <li><i class="fa-solid fa-database"></i> PL/SQL</li>
                         </ul>
                     </p>
                 </div>
     
                 <div class="card">
-                    <h3>GIT</h3>
+                    <h3 class="highlight"><i class="fa-brands fa-git-alt"></i> GIT</h3>
                     <p>
                         Manage and track code changes in your development process through a version system and its different branches, facilitating team collaboration and optimizing the development workflow.
                     </p>
                 </div>
                 
                 <div class="card">
-                    <h3>Docker</h3>
+                    <h3 class="highlight"><i class="fa-brands fa-docker"></i> Docker</h3>
                     <p>
                         Reduce conflicts between differing environments, and accelerate deployment cycles. My expertise includes creating lightweight, secure, and portable containers that encapsulate all necessary dependencies, making applications easy to deploy and scale.
                     </p>
                 </div>
                 
                 <div class="card">
-                    <h3>Linux</h3>
+                    <h3 class="highlight"><i class="fa-brands fa-linux"></i> Linux</h3>
                     <p>I have been using Linux systems for 7 years as my main system, I have gone through different distros and work environments from which I have acquired different knowledge in the management of this operating system.</p>
                     <p>
                         knowledge:
                         <ul>
-                            <li>Terminal</li>
-                            <li>Package managers</li>
-                            <li>Bash scripting</li>
+                            <li><i class="fa-solid fa-terminal"></i> Terminal</li>
+                            <li><i class="fa-solid fa-terminal"></i> Package managers</li>
+                            <li><i class="fa-solid fa-terminal"></i> Bash scripting</li>
                         </ul>
                     </p>
                 </div>
@@ -209,8 +215,8 @@
         </section>
 
         <section id="portfolio" class="section">
-            <!-- Main content of the contact section -->
-            <div>
+            <h2>MY PROYECTS</h2>
+            <div class="wrapper">
                 <div class="card">
                     <h3>Rock, Paper and Scissors</h3>
                     <p>a game made in javascript vanilla, based on one of the challenges of the <a href="https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH">frontent mentor</a> page</p>
@@ -232,47 +238,51 @@ You can see the solutions along with their codes by clicking <a href="https://co
         <section id="contact" class="section">
             <!-- Main content of the contact section -->
 
-            <h3>Contact me</h3>
-            <div class="">
-                <div>
+            <h2>CONTACT ME</h2>
+            <div>
+                <div class="contacts">
                     <div class="contact">
-                        <h4><i class="fa-regular fa-map"></i> Location</h4>
+                        <h4><i class="fa-regular fa-map highlight"></i> Location</h4>
                         <p>Santa Fe, Argentina (cod 3000)</p>
                     </div>
                     <div class="contact">
-                        <h4><i class="fa-regular fa-envelope"></i> Email</h4>
+                        <h4><i class="fa-regular fa-envelope highlight"></i> Email</h4>
                         <p>axelcuer@gmail.com</p>
                     </div>
                     <div class="contact">
-                        <h4><i class="fa-solid fa-phone"></i> Phone</h4>
+                        <h4><i class="fa-solid fa-phone highlight"></i> Phone</h4>
                         <p>(+54) 342-5930060</p>
                     </div>
                     <div class="contact">
                         <h4>Social Media</h4>
-                        <a href="www.linkedin.com/in/axel-rueda-gimenez-b46970222">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/axelrueg/">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
+                        <p>
+                            <a href="www.linkedin.com/in/axel-rueda-gimenez-b46970222">
+                                <i class="fa-brands fa-linkedin highlight"></i>
+                                linkedin
+                            </a><br>
+                            <a href="https://github.com/axelrueg/">
+                                <i class="fa-brands fa-github highlight"></i>
+                                @axelrueg
+                            </a>
+                        </p>
                     </div>
                     
                 </div>
-                <div class="">
-                    <form action="enviar_correo.php" method="post">
+                <div class="contact__form">
+                    <form action="" method="post">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required><br><br>
+                        <input type="text" id="name" name="name" required>
                         
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required><br><br>
+                        <input type="email" id="email" name="email" required>
                         
                         <label for="subject">subject:</label>
-                        <input type="text" id="subject" name="subject" required><br><br>
+                        <input type="text" id="subject" name="subject" required>
                         
                         <label for="message">Message:</label><br>
-                        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                        <textarea id="message" name="message" rows="4" required></textarea>
                         
-                        <input type="submit" value="Enviar">
+                        <input type="submit" value="Enviar" disabled />
                     </form>
                 </div>
             </div>
@@ -284,4 +294,5 @@ You can see the solutions along with their codes by clicking <a href="https://co
     </footer>
 
 </body>
+<script src="./main.js"></script>
 </html>
