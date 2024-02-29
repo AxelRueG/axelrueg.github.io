@@ -40,7 +40,7 @@ body {
 }
 
 /* ----------------------------------------------------------------------------
-                        NAVBAR
+                            NAVBAR
 ---------------------------------------------------------------------------- */
 .header {
     display: flex;
@@ -84,25 +84,37 @@ body {
     text-decoration: none;
 }
 /* ----------------------------------------------------------------------------
-                            SECCIONS
+                    SECCIONS GENERALS
 ---------------------------------------------------------------------------- */
 main {
-    padding: 1em;
-}
-.section {
-    min-height: 100vh;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.highlight {
-    color: var(--primary-color);
-    /* font-weight: 800; */
+.section {
+    min-height: 100vh;
+    /* border: 1px solid green; */
 }
 
 .section > h2 {
     text-align: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+
+    font-family: monospace;
 }
 
-/* ---- HOME ---- */
+.highlight {
+    color: var(--primary-color);
+}
+
+/* ----------------------------------------------------------------------------
+                            HOME
+ --------------------------------------------------------------------------- */
 .home--italic {
     font-style: italic;
     font-weight: bold;
@@ -114,8 +126,7 @@ main {
     box-shadow: 2px 4px 15px -2px rgba(0,0,0,0.49);
     -webkit-box-shadow: 2px 4px 15px -2px rgba(0,0,0,0.49);
     -moz-box-shadow: 2px 4px 15px -2px rgba(0,0,0,0.49);
-    margin-bottom: 1.5em;
-    margin-top: 2em;
+    margin: 1.5em;
 }
 
 .home__contacts p {
@@ -123,7 +134,7 @@ main {
 
 }
 
-.home__contacts, .container {
+.container--center {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -142,15 +153,96 @@ main {
     border: 2px solid var(--primary-color);
     color: var(--text-color);
 }
-.home__btn:hover {
+.home__btn:hover, 
+.container__item > button:hover {
     border-color: var(--secondary-color);
+    cursor: pointer;
     background-color: rgba(150,150,150,0.1);
     box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.49);
     -webkit-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.49);
     -moz-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.49);
 }
 
-/* card */
+/* ----------------------------------------------------------------------------
+                            ABOUT ME 
+ --------------------------------------------------------------------------- */
+.section__aboutMe{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.container {
+    width: 80%;
+    min-width: 20em;
+    max-width: 28em;
+    padding: 1em;
+}
+.container h3{
+    margin-bottom: 0.5em;
+}
+
+.container__item {
+    /* height: 4em; */
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: end;
+    align-items: end;
+}
+.container__item::before {
+    content: "";
+    width: calc(100% - 2em);
+    height: 1px;
+    background-color: var(--primary-color);
+
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+}
+
+.container__item h4 {
+    width: 100%;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.container__item button {
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 50%;
+}
+
+.container__item__content {
+    display: none;
+    font-family: monospace;
+    font-size: 12px;
+    margin-top: 0.5em;;
+}
+
+.container__item__content-active {
+    display: block;
+}
+
+.container__item__content > img {
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+}
+
+.aboutMe_info {
+    font-size: 12px;
+    font-family: monospace;
+    max-width: 80em;
+}
+
+/* ----------------------------------------------------------------------------
+                            card 
+ --------------------------------------------------------------------------- */
 .card {
     background-color: var(--hover-color);
     border-radius: 1em;
@@ -158,8 +250,18 @@ main {
     box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.49);
     -webkit-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.49);
     -moz-box-shadow: 2px 2px 5px -2px rgba(0,0,0,0.49);
-    margin-bottom: 1em;
     min-width: 20em;
+}
+
+.underLine {
+    border-bottom: 1px solid var(--primary-color);
+    margin-top: 0.4em;
+    margin-bottom: 0.5em;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 0.3em;
 }
 
 .card ul {
@@ -169,7 +271,7 @@ main {
 
 .card li {
     font-weight: 200;
-    font-size: 1em;
+    font-size: 13px;
     font-style: italic;
 }
 
@@ -177,24 +279,49 @@ main {
     color: var(--secondary-color);
 }
 
+
+.card__img {
+    display: block;
+    width: 100%;
+    height: 10em;
+    overflow: hidden;
+    margin-top: 1em;
+    position: relative;
+}
+/* .card__img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(50,50,50,0.3);
+} */
+
+/* .card__img:hover { */
+    /* content: "Visitar"; */
+    /* background-color: rgba(50,50,50,0.5); */
+/* } */
+
+.card__img img {
+    width: 100%;
+}
+
+.section__services {
+    border: 1px solid purple;
+    display: flex;
+    justify-content: center;
+}
+
 /* ---------------------------------------------------------------------------- 
-    contact 
+                            contact 
 ---------------------------------------------------------------------------- */
 .contacts {
-    position: relative;
+    border-left: 1px solid var(--primary-color);
     padding: 0.75em;
     margin-bottom: 1em;
 }
 
-.contacts::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px; /* Width of the vertical line */
-    height: 100%; /* Height of the vertical line */
-    background-color: var(--primary-color); /* Color of the vertical line */
-}
 .contact {
     margin-bottom: 0.3em;
 }
@@ -208,6 +335,10 @@ main {
     padding-left: 0.75em;
 }
 
+.contacts, .contact__form{
+    min-width: 20em;
+}
+
 .contact__form input, textarea {
     background-color: var(--hover-color);
     border: none;
@@ -217,6 +348,10 @@ main {
     border-radius: 10px;
     padding: 0.5em 0.75em;
     margin-bottom: 0.5em;
+    box-shadow: 2px 2px 10px -2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 2px 2px 10px -2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 2px 2px 10px -2px rgba(0,0,0,0.2);
+    margin: 1.5em;
 }
 
 .contact__form input:focus, textarea:focus {
@@ -225,4 +360,100 @@ main {
 
 .contanct__form form {
     font-size: 10px;
+}
+
+/* ----------------------------------------------------------------------------
+                            CARRUSEL
+ --------------------------------------------------------------------------- */
+.carousel {
+    max-width: 60em;
+    padding: 0.5em;
+    overflow: hidden;
+}
+.carousel .elements {
+    width: 400%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s ease;
+}
+.carousel .card {
+    width: calc(100% / 4);
+    margin: 1em;
+    transition: all 0.4s ease;
+}
+
+.carousel .points {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel .point {
+    width: 1em;
+    height: 1em;
+    margin: 0.5em;
+    color: var(--secondary-color);
+    transition: all 0.4s ease;
+    border-radius: 50%;
+    background-color: hsl(41, 24%, 35%);
+}
+
+.carousel .point-active {
+    background-color: var(--primary-color);
+}
+
+/* ----------------------------------------------------------------------------
+                            RESPONSIVE 
+ --------------------------------------------------------------------------- */
+.wrapper, 
+.services {
+    /* border: 1px solid red; */
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(20em, 1fr)
+    );
+    gap: 1em;
+    margin: auto;
+}
+
+
+ /* {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(20em, 1fr));
+    gap: 10px;
+    max-width: 800px;
+    margin: auto;
+} */
+
+@media (min-width: 768px) {
+
+
+    .services {
+        max-width: 60em;
+    }
+
+    .section__contacts {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .contact__form {
+        width: 40%;
+    }
+    
+    .contacts {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding-left: 2em;
+    }
+
 }
