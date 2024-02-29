@@ -104,7 +104,8 @@ main {
 }
 
 .section {
-    min-height: 100vh;
+    min-height: calc(100vh - 3.5em);
+    /* padding-top: 3.5em; */
 }
 
 .section > h2 {
@@ -122,6 +123,8 @@ main {
 /* ----------------------------------------------------------------------------
                             HOME
  --------------------------------------------------------------------------- */
+
+
 .home--italic {
     font-style: italic;
     font-weight: bold;
@@ -325,7 +328,7 @@ main {
 }
 
 .contact__form input, textarea {
-    background-color: var(--hover-color);
+    background-color: #606060;
     border: none;
     display: block;
     width: 100%;
@@ -461,7 +464,8 @@ main {
     }
 
     .section {
-        min-height: calc(100vh - 5em);
+        min-height: 100vh;
+        /* min-height: calc(100vh - 5em); */
         /* border-bottom: 1px solid var(--primary-color); */
     }
 
@@ -507,7 +511,7 @@ main {
     }
 
 
-    /* ------------------- CARRUSEL ---------------------------------------- */
+    /* ---------------------- HOME ----------------------------------------- */
     .home {
         display: flex;
         justify-content: center;
@@ -551,9 +555,4 @@ main {
     .elements__img:hover .visit-text {
         opacity: 1; /* Show text on hover */
     }
-}
-
-.footer {
-    height: 5em;
-    border-top: 1px solid var(--hover-color);
 }
