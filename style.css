@@ -44,23 +44,23 @@ body {
 ---------------------------------------------------------------------------- */
 .header {
     display: flex;
-    justify-content: end;
-
+    justify-content: space-between;
     position: -webkit-sticky; /* browser compatibility */
     position: sticky;
     top: 0;
-    background-image: linear-gradient(black, 5%, transparent);
+    padding: 1em;
+    z-index: 1;
+    background-image: linear-gradient(#202020, transparent);
 }
 
 .navbar {
     display: flex;
+    flex-flow: column;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.5em;  
+    align-items: end;
 }
 
 .menu-toggle {
-    display: inline-block;
     cursor: pointer;
 }
 
@@ -76,13 +76,21 @@ body {
 }
 
 .menu li {
-    padding: 10px;
+    padding-top: 0.5em;
+    text-align: end;
 }
 
 .menu li a {
     color: #fff;
     text-decoration: none;
+    font-family: monospace;
 }
+
+.menu-toggle:hover,
+.menu li a:hover {
+    color: var(--primary-color);
+}
+
 /* ----------------------------------------------------------------------------
                     SECCIONS GENERALS
 ---------------------------------------------------------------------------- */
@@ -287,11 +295,16 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* align-items: center; */
 }
 .contacts {
     border-left: 1px solid var(--primary-color);
     padding: 0.75em;
     margin-bottom: 1em;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
 }
 
 .contact {
@@ -448,13 +461,50 @@ main {
     }
 
     .section {
-        min-height: calc(100vh - 7.5em);
+        min-height: calc(100vh - 5em);
         /* border-bottom: 1px solid var(--primary-color); */
     }
 
     /* -------------------- NAVBAR ----------------------------------------- */
+    .header {
+        height: 5em;
+    }
     
+    .menu-toggle {
+        display: none;
+    }
 
+    .navbar{
+        width: 50%;
+    }
+    
+    .menu {
+        width: 100%;
+        min-width: 20em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .show {
+        display: block;
+    }
+    
+    .menu li {
+        padding-top: 0;
+    }
+    
+    .menu li a {
+        color: #fff;
+        text-decoration: none;
+        font-family: monospace;
+    }
+    
+    /* .menu-toggle:hover, */
+    .menu li a:hover {
+        color: var(--primary-color);
+        text-decoration: underline;
+    }
 
 
     /* ------------------- CARRUSEL ---------------------------------------- */
