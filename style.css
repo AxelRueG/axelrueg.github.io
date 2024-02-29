@@ -237,6 +237,7 @@ main {
     font-size: 12px;
     font-family: monospace;
     max-width: 80em;
+    margin: 0.5em
 }
 
 /* ----------------------------------------------------------------------------
@@ -277,40 +278,6 @@ main {
 
 .card a {
     color: var(--secondary-color);
-}
-
-
-.card__img {
-    display: block;
-    width: 100%;
-    height: 10em;
-    overflow: hidden;
-    margin-top: 1em;
-    position: relative;
-}
-/* .card__img::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(50,50,50,0.3);
-} */
-
-/* .card__img:hover { */
-    /* content: "Visitar"; */
-    /* background-color: rgba(50,50,50,0.5); */
-/* } */
-
-.card__img img {
-    width: 100%;
-}
-
-.section__services {
-    border: 1px solid purple;
-    display: flex;
-    justify-content: center;
 }
 
 /* ---------------------------------------------------------------------------- 
@@ -371,11 +338,12 @@ main {
 /* ----------------------------------------------------------------------------
                             CARRUSEL
  --------------------------------------------------------------------------- */
-/* .carousel {
-    max-width: 60em;
-    padding: 0.5em;
+.carousel {
+    max-width: 50em;
+    width: 95vw;
     overflow: hidden;
 }
+
 .carousel .elements {
     width: 400%;
     display: flex;
@@ -384,10 +352,23 @@ main {
     align-items: center;
     transition: all 0.4s ease;
 }
-.carousel .card {
+
+.carousel .elements__item {
     width: calc(100% / 4);
+    background-color: var(--hover-color);
+    padding: 1em;
     margin: 1em;
-    transition: all 0.4s ease;
+    border-radius: 1em;
+
+    box-shadow: 2px 2px 10px -2px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 2px 2px 10px -2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 2px 2px 10px -2px rgba(0,0,0,0.2);
+
+    font-family: monospace;
+}
+
+.carousel .elements__item a {
+    color: var(--secondary-color);
 }
 
 .carousel .points {
@@ -395,11 +376,12 @@ main {
     list-style-type: none;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .carousel .point {
-    width: 1em;
-    height: 1em;
+    width: 0.7em;
+    height: 0.7em;
     margin: 0.5em;
     color: var(--secondary-color);
     transition: all 0.4s ease;
@@ -407,36 +389,53 @@ main {
     background-color: hsl(41, 24%, 35%);
 }
 
+.carousel .point:hover {
+    cursor: pointer;
+}
+
 .carousel .point-active {
     background-color: var(--primary-color);
-} */
+    width: 0.8em;
+    height: 0.8em;
+}
 
+.elements__img {
+    display: block;
+    width: 100%;
+    height: 10em;
+    overflow: hidden;
+    margin-top: 1em;
+    position: relative;
+}
+
+.elements__img img {
+    width: 100%;
+    opacity: 0.6;
+}
+
+.elements__img .visit-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;    
+    display: block;
+    width: 100%;
+    text-align: center;
+}
 /* ----------------------------------------------------------------------------
                             RESPONSIVE 
  --------------------------------------------------------------------------- */
 .wrapper, 
 .services {
-    /* border: 1px solid red; */
     max-width: 120em;
-    /* display: grid;
-    grid-template-columns: repeat(
-        auto-fill,
-        minmax(20em, 1fr)
-    );
-    gap: 1em; */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
-
- /* {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(20em, 1fr));
-    gap: 10px;
-    max-width: 800px;
-    margin: auto;
-} */
 
 @media (min-width: 992px) {
 
@@ -450,14 +449,34 @@ main {
 
     .section {
         min-height: calc(100vh - 7.5em);
-        border-bottom: 1px solid var(--primary-color);
+        /* border-bottom: 1px solid var(--primary-color); */
     }
 
+    /* ------------------- CARRUSEL ---------------------------------------- */
+    
+
+    /* ------------------- CARRUSEL ---------------------------------------- */
+    .elements__img img {
+        transition: all 0.4s ease, opacity 0.4s ease;
+        opacity: 0.9;
+    }
+    .elements__img:hover img {
+        transform: scale(1.05);
+        transform-origin: center;
+        opacity: 0.5;
+    }
+    
+    .elements__img .visit-text {
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    .elements__img:hover .visit-text {
+        opacity: 1; /* Show text on hover */
+    }
 }
 
 .footer {
     height: 5em;
     border-top: 1px solid var(--hover-color);
-    /* margin-top: 2em; */
-
 }
