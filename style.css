@@ -452,8 +452,35 @@ main {
         /* border-bottom: 1px solid var(--primary-color); */
     }
 
-    /* ------------------- CARRUSEL ---------------------------------------- */
+    /* -------------------- NAVBAR ----------------------------------------- */
     
+
+
+
+    /* ------------------- CARRUSEL ---------------------------------------- */
+    .home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        max-width: 60em;
+    }
+    .home__profile {
+        width: 20em;
+        margin-right: 3em;
+    }
+
+    .home__contacts {
+        display: flex;
+        flex-flow: row;
+        justify-content: left;
+        padding: 1em 0.5em;
+    }
+
+    .home__contacts p {
+        margin-right: 1em;
+        
+    }
 
     /* ------------------- CARRUSEL ---------------------------------------- */
     .elements__img img {
