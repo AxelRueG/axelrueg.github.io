@@ -231,14 +231,21 @@ main {
     display: none;
     font-family: monospace;
     font-size: 12px;
-    margin-top: 0.5em;;
+    margin-top: 0.5em;
+}
+
+.container__item__content a {
+    color: var(--primary-color);
 }
 
 .container__item__content-active {
-    display: block;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.container__item__content > img {
+.container__item__content img {
     display: block;
     margin: auto;
     margin-top: 1em;
@@ -469,7 +476,8 @@ main {
 
     .section {
         min-height: 100vh;
-        /* border-bottom: 1px solid var(--primary-color); */
+        /* width: 100%;
+        border: 1px solid var(--primary-color); */
     }
     .section h2 {
         margin-top: 2em;
@@ -561,6 +569,10 @@ main {
         
     }
 
+    .contacts {
+        margin-right: 0.5em;
+    }
+
     /* ------------------- CARRUSEL ---------------------------------------- */
     .elements__img img {
         transition: all 0.4s ease, opacity 0.4s ease;
@@ -581,3 +593,8 @@ main {
         opacity: 1; /* Show text on hover */
     }
 }
+/* 
+#home {
+    background-image: url('./assets/home_bg.jpg');
+    background-size: cover;
+} */
