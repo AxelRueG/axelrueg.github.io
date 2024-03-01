@@ -446,14 +446,18 @@ main {
                             RESPONSIVE 
  --------------------------------------------------------------------------- */
 .wrapper, 
-.services {
+.services { 
     max-width: 120em;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 1.5em;
 }
 
 @media (min-width: 992px) {
+    body {
+        display: flex;
+    }
 
     .card {
         max-width: 25em;
@@ -465,29 +469,47 @@ main {
 
     .section {
         min-height: 100vh;
-        /* min-height: calc(100vh - 5em); */
         /* border-bottom: 1px solid var(--primary-color); */
+    }
+    .section h2 {
+        margin-top: 2em;
+    }
+
+    .menu_select {
+        color: var(--primary-color) !important;
+        font-size: 20px !important;
     }
 
     /* -------------------- NAVBAR ----------------------------------------- */
     .header {
-        height: 5em;
-    }
-    
-    .menu-toggle {
-        display: none;
+        /* height: 5em; */
+        width: 20vw;
+        max-width: 25em;
+        height: 100vh;
+        background-image: linear-gradient(90deg,#222, transparent);
+        display: block;
     }
 
-    .navbar{
-        width: 50%;
+    .logo {
+        height: 2em;
+    }
+    .navbar {
+        height: calc(100% - 2em);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .menu-toggle {
+        display: none;
     }
     
     .menu {
         width: 100%;
-        min-width: 20em;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        padding-left: 1.5em;
+        display: block;
+        margin-top: -2em;
+        border-left: 1px solid var(--primary-color);
     }
     
     .show {
@@ -495,13 +517,16 @@ main {
     }
     
     .menu li {
-        padding-top: 0;
+        /* padding-top: 0; */
+        text-align: left;
+        margin-bottom: 1em;
     }
     
     .menu li a {
         color: #fff;
         text-decoration: none;
         font-family: monospace;
+        font-size: 18px;
     }
     
     /* .menu-toggle:hover, */

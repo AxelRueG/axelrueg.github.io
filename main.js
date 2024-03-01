@@ -16,7 +16,9 @@ points.forEach( (point, i) => {
     })
 } )
 
-// handle more button
+// -------------------------------------------------------------------------------------------------
+// --------------- handle more button --------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------
 const containers = document.querySelectorAll('.container__item');
 
 // Iterate over each container
@@ -37,3 +39,29 @@ containers.forEach((container, i) => {
         }
     });
 });
+
+// -------------------------------------------------------------------------------------------------
+// --------------- handle more button --------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', () => {
+    const docHeight = document.documentElement.scrollHeight
+
+    const menuOptions = [ 0, 0.11, 0.26, 0.41, 0.69, 0.83, 1 ]
+
+    const items = document.querySelectorAll('.menuItem')
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop
+        const percent = scrollTop/docHeight
+
+        items.forEach((elem, i) => items[i].classList.remove('menu_select'))
+
+        for (let i = 0; i < items.length; i++) {
+            if (percent >= menuOptions[i] && percent < menuOptions[i+1]){
+                items[i].classList.add('menu_select')
+            }
+        }
+
+    })
+})
